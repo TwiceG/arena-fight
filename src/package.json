@@ -1,0 +1,18 @@
+{
+  "type": "commonjs",
+  "name": "node-fight",
+  "version": "1.0.0",
+  "description": "Cli fighting heroes",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build": "tsc"
+  },
+  "author": "TwiceG",
+  "license": "MIT",
+  "dependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.3"
+  }
+}
+
