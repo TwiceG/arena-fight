@@ -41,7 +41,6 @@ var BattleAxe_1 = require("./weapon/BattleAxe");
 var Wand_1 = require("./weapon/Wand");
 var Dagger_1 = require("./weapon/Dagger");
 var Bow_1 = require("./weapon/Bow");
-var Sword_1 = require("./weapon/Sword");
 var WarHammer_1 = require("./weapon/WarHammer");
 var Helper_1 = require("./utility/Helper");
 var BoostType_1 = require("./boosts/BoostType");
@@ -52,7 +51,6 @@ var Arena = /** @class */ (function () {
         this.weapons.push(new BattleAxe_1.BattleAxe());
         this.weapons.push(new Bow_1.Bow());
         this.weapons.push(new Dagger_1.Dagger());
-        this.weapons.push(new Sword_1.Sword());
         this.weapons.push(new Wand_1.Wand());
         this.weapons.push(new WarHammer_1.WarHammer());
     }
@@ -105,6 +103,9 @@ var Arena = /** @class */ (function () {
         var abilityResult = "";
         switch (boostType) {
             case BoostType_1.BoostType.dmgBoost:
+                abilityResult += "".concat(player.name, " cast ").concat(player.ability.name, " \n\n");
+                break;
+            case BoostType_1.BoostType.healBoost:
                 abilityResult += "".concat(player.name, " cast ").concat(player.ability.name, " \n\n");
                 break;
             case BoostType_1.BoostType.evasionBoost:

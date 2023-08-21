@@ -20,7 +20,6 @@ export class Arena {
         this.weapons.push(new BattleAxe());
         this.weapons.push(new Bow());
         this.weapons.push(new Dagger());
-        this.weapons.push(new Sword());
         this.weapons.push(new Wand());
         this.weapons.push(new WarHammer());
     }
@@ -83,6 +82,9 @@ export class Arena {
             case BoostType.dmgBoost:
                 abilityResult += `${player.name} cast ${player.ability.name} \n\n`
                 break;
+            case BoostType.healBoost:
+                abilityResult += `${player.name} cast ${player.ability.name} \n\n`
+                break;    
             case BoostType.evasionBoost:
                 abilityResult += `${player.name} cast ${player.ability.name} \n\n`
                 break;
@@ -119,7 +121,7 @@ export class Arena {
         }
         return turnResult;
     }
-    
+
     public async delay(ms: number): Promise<void> {
         return new Promise(resolve => setTimeout(resolve, ms));
     }

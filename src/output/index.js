@@ -38,7 +38,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var Arena_js_1 = require("./Arena.js");
 var Warrior_js_1 = require("./heroes/Warrior.js");
-var Mage_js_1 = require("./heroes/Mage.js");
+var Priest_js_1 = require("./heroes/Priest.js");
 var readline = require("readline");
 function promptUser(question) {
     var rl = readline.createInterface({
@@ -59,7 +59,9 @@ function playGame(arena, player1, player2) {
             switch (_a.label) {
                 case 0:
                     arena.prepareForFight(player1);
+                    console.log(player1.name + " equipped " + player1.weapon.name + " weapon. \n");
                     arena.prepareForFight(player2);
+                    console.log(player2.name + " equipped " + player2.weapon.name + " weapon. \n");
                     console.log("Starting the game...");
                     _a.label = 1;
                 case 1:
@@ -77,7 +79,6 @@ function playGame(arena, player1, player2) {
                     _a.sent();
                     return [3 /*break*/, 1];
                 case 4:
-                    console.log("Game over.");
                     winner = Math.max(player1.HP, player2.HP);
                     return [2 /*return*/, player1.HP === winner ? "The winner is ".concat(player1.name) : "The winner is ".concat(player2.name)];
             }
@@ -91,8 +92,8 @@ function main() {
             switch (_a.label) {
                 case 0:
                     arena = new Arena_js_1.Arena();
-                    player1 = new Warrior_js_1.Warrior("Bazsi");
-                    player2 = new Mage_js_1.Mage("Maarsu");
+                    player1 = new Priest_js_1.Priest("Misa");
+                    player2 = new Warrior_js_1.Warrior("TwiceG");
                     return [4 /*yield*/, playGame(arena, player1, player2)];
                 case 1:
                     result = _a.sent();

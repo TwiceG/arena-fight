@@ -26,7 +26,9 @@ function promptUser(question: string): Promise<string> {
 
 async function playGame(arena: Arena, player1: Hero, player2: Hero) {
     arena.prepareForFight(player1);
+    console.log(player1.name + " equipped " + player1.weapon.name + " weapon. \n" );
     arena.prepareForFight(player2);
+    console.log(player2.name + " equipped " + player2.weapon.name + " weapon. \n" );
 
     console.log("Starting the game...");
 
@@ -50,8 +52,8 @@ async function playGame(arena: Arena, player1: Hero, player2: Hero) {
 
 async function main() {
     const arena = new Arena();
-    const player1 = new Warrior("Bazsi");
-    const player2 = new Mage("Maarsu");
+    const player1 = new Priest("Misa");
+    const player2 = new Warrior("TwiceG");
 
     const result = await playGame(arena, player1, player2);
     console.log(result);
